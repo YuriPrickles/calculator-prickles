@@ -15,6 +15,8 @@ class Expression:
 		match op:
 			case "+":
 				return t1 + t2
+			case "-":
+				return t1 - t2
 			case "*":
 				return t1 * t2
 class Main:

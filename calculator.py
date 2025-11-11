@@ -17,6 +17,8 @@ class Expression:
 				return t1 + t2
 			case "-":
 				return t1 - t2
+			case "*":
+				return t1 * t2
 class Main:
 	saved_answer = 0
 	def run_calc(self):

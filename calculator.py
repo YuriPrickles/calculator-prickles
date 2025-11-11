@@ -19,6 +19,8 @@ class Expression:
 				return t1 - t2
 			case "*":
 				return t1 * t2
+			case "/":
+				return t1 / t2
 class Main:
 	saved_answer = 0
 	def run_calc(self):
@@ -34,10 +36,10 @@ class Main:
 				raise Exception(f"Operation \"{operator_input}\" not recognized\nLast saved resuklt: {self.saved_answer}")
 
 			term1_input = input(f"Input first term of [x] {operator_input} y\nLeave blank to use previous result: [{"" if not first_loop else self.saved_answer}]\n")
-			term1_input = self.saved_answer if not term1_input else int(term1_input)
+			term1_input = self.saved_answer if not term1_input else float(term1_input)
 
 			term2_input = input(f"Input second term of {term1_input} {operator_input} [y]\nLeave blank to use previous result: [{"" if not first_loop else self.saved_answer}]\n")
-			term2_input = self.saved_answer if not term2_input else int(term2_input)
+			term2_input = self.saved_answer if not term2_input else float(term2_input)
 
 			expr = Expression(operator_input, term1_input, term2_input)
 			expr_answer = expr.evaluate_expression(expr.term1,expr.term2,expr.operator)
